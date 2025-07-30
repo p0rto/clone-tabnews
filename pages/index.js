@@ -24,8 +24,4 @@ function Home() {
   );
 }
 
-function teste() {
-  console.log("identacao errada");
-}
-
 export default Home;
