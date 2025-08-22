@@ -15,10 +15,6 @@ function Home() {
       <audio controls>
         <source src="/songbird.mp3" />
       </audio>
-      <img
-        src="https://i.redd.it/wrgxqesjz8ze1.gif"
-        style={{ width: "400px", height: "auto" }}
-      />
       <span>Te amo ontem, hoje e amanhã, guriazinha.</span>
     </div>
   );
