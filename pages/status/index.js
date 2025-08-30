@@ -42,7 +42,6 @@ function DatabaseStatus() {
     const databaseData = data.dependencies.database;
     databaseStatusInformation = (
       <div>
-        <h2>Banco de Dados</h2>
         <div>Versão: {databaseData.version}</div>
         <div>Máximo de conexões: {databaseData.max_connections}</div>
         <div>Conexões abertas: {databaseData.opened_connections}</div>
@@ -50,5 +49,10 @@ function DatabaseStatus() {
     );
   }
 
-  return databaseStatusInformation;
+  return (
+    <>
+      <h2>Database</h2>
+      <div>{databaseStatusInformation}</div>
+    </>
+  );
 }
