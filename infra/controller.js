@@ -1,6 +1,7 @@
 import {
   InternalServerError,
   MethodNotAllowedError,
+  NotFoundError,
   ValidationError,
 } from "./errors.js";
 
@@ -10,8 +11,7 @@ function onNoMatchHandler(request, response) {
 }
 
 function onErrorHandler(error, request, response) {
-  console.log("error", error);
-  if (error instanceof ValidationError) {
+  if (error instanceof ValidationError || error instanceof NotFoundError) {
     return response.status(error.statusCode).json(error);
   }
 
