@@ -17,7 +17,6 @@ function onErrorHandler(error, request, response) {
     error instanceof NotFoundError ||
     error instanceof UnauthorizedError
   ) {
-    console.log(error);
     return response.status(error.statusCode).json(error);
   }
 
