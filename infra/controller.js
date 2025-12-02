@@ -61,7 +61,7 @@ function clearSessionCookie(response) {
   response.setHeader("Set-Cookie", setCookie);
 }
 
-async function injectAnonimousOrUser(request, response, next) {
+async function injectAnonymousOrUser(request, response, next) {
   if (request.cookies?.session_id) {
     await injectAuthenticatedUser(request);
     return next();
@@ -115,7 +115,7 @@ const controller = {
   },
   setSessionCookie,
   clearSessionCookie,
-  injectAnonimousOrUser,
+  injectAnonymousOrUser,
   canRequest,
 };
 
