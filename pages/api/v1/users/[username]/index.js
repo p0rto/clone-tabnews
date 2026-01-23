@@ -22,8 +22,8 @@ async function patchHandler(request, response) {
   const username = request.query.username;
   const userInputValues = request.body;
 
-  const userTryingToPatch = await user.findOneByUsername(username);
-  const targetUser = request.context.user;
+  const targetUser = await user.findOneByUsername(username);
+  const userTryingToPatch = request.context.user;
 
   if (!authorization.can(userTryingToPatch, "update:user", targetUser)) {
     throw new ForbiddenError({
